@@ -25,7 +25,15 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: false,
+        docs: {
+          sidebarPath: './sidebars.js',
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'Next',
+            },
+          },
+        },
         blog: false,
         theme: {
           customCss: './src/css/custom.css',
@@ -42,6 +50,18 @@ const config = {
       },
       navbar: {
         title: 'Packed',
+        items: [
+          {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'Docs',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+          },
+        ],
       },
       footer: {
         style: 'dark',
